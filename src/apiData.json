@@ -1,0 +1,87 @@
+{
+  "reports": [
+    {
+      "columnHeader": {
+        "dimensions": ["ga:date"],
+        "metricHeader": {
+          "metricHeaderEntries": [
+            {
+              "name": "ga:adClicks",
+              "type": "INTEGER"
+            },
+            {
+              "name": "ga:sessions",
+              "type": "INTEGER"
+            }
+          ]
+        }
+      },
+      "data": {
+        "rows": [
+          {
+            "dimensions": ["20211102"],
+            "metrics": [
+              {
+                "values": ["123", "1234"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211103"],
+            "metrics": [
+              {
+                "values": ["234", "2345"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211104"],
+            "metrics": [
+              {
+                "values": ["345", "3456"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211105"],
+            "metrics": [
+              {
+                "values": ["456", "4567"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211106"],
+            "metrics": [
+              {
+                "values": ["567", "5678"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211107"],
+            "metrics": [
+              {
+                "values": ["678", "6789"]
+              }
+            ]
+          },
+          {
+            "dimensions": ["20211108"],
+            "metrics": [
+              {
+                "values": ["789", "7890"]
+              }
+            ]
+          }
+        ],
+        "totals": [
+          {
+            "values": ["890", "8901"]
+          }
+        ],
+        "rowCount": 7
+      }
+    }
+  ]
+}

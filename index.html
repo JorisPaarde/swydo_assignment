@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Formatting API response</h1>
+
+    <p>
+      We communicate with many third-party service providers that, all return
+      data in different formats. In order for us to process this data we need to
+      format it to the format our system understands. Data consists of metrics,
+      numeric values, and dimensions, the breakdown of the data.
+    </p>
+
+    <p>
+      The Google Analytics reporting API reutrns data in the following format:
+    </p>
+
+    <pre>
+      <code>
+        {
+          "reports": [
+            {
+              "columnHeader": {
+                "dimensions": ["dimensionName"],
+                "metricHeader": {
+                  "metricHeaderEntries": [
+                    {
+                      "name": "metricName",
+                      "type": "INTEGER"
+                    }
+                  ]
+                }
+              },
+              "data": {
+                "rows": [
+                  {
+                    "dimensions": ["dimensionValue"],
+                    "metrics": [
+                      {
+                        "values": ["metricValue"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      </code>
+    </pre>
+
+    <p>
+      A complete example payload from the Google Analytics reporting API can be
+      found in <b>"src/apiData.json"</b>
+    </p>
+
+    <p>
+      Our data format expects an object with one or more rows that contain an
+      object with key value pairs with the values of the dimensions and metrics.
+    </p>
+
+    <pre>
+      <code>
+          {
+            "rows": [
+              {
+                "dimensionName": "dimensionValue",
+                "metricName": "metricValue"
+              }
+            ]
+          }          
+      </code>
+    </pre>
+
+    <p>
+      <b>
+        A) Complete the "formatApiData" function so that it formats the data in
+        "apiData.json" to our expected format. Also expand the unit tests with
+        additional test cases and expectations so that all code paths are
+        tested.
+      </b>
+      <i>
+        You can run tests by going to the Tests tab. Tests are written in the 
+        <b>"formatApiData.test.js"</b> file using jest:
+        <a href=https://jestjs.io/>https://jestjs.io/</a>
+      </i>
+    </p>
+
+    <p>
+      In addition to rows our data format also support totals. Totals are
+      basically the same as a single row containg the aggregated values of the
+      metrics.
+    </p>
+
+    <pre>
+      <code>
+          {
+            "rows": [
+              {
+                "dimensionName": "dimensionValue",
+                "metricName": "metricValue"
+              }
+            ],
+            "totals": { "metricName": "metricValue" }
+          }          
+      </code>
+    </pre>
+
+    <p>
+      Luckily for us the Google Analytics API also returns a totals object that
+      we can add to our formatted data.
+    </p>
+
+    <p>
+      <b>
+        B) Add support for parsing totals to the "formatApiData" function and
+        add unit tests so that all code paths remain tested.
+      </b>
+    </p>
+  </body>
+</html>
